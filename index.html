@@ -21,6 +21,11 @@
             background-color: #121212;
             color: #ffffff;
         }
+        #zeteo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         #zeteo {
             font-size: 5rem;
             font-weight: bold;
@@ -72,16 +77,32 @@
             cursor: pointer;
             color: inherit;
         }
+        #logo {
+            margin-top: 20px;
+            width: 100px;
+            height: auto;
+            display: none;
+            animation: fadeInLogo 1s forwards 4s;
+        }
+        @keyframes fadeInLogo {
+            to {
+                display: block;
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
     <i id="dark-mode-toggle" class="fas fa-moon"></i>
-    <div id="zeteo">
-        <span class="letter">Z</span>
-        <span class="letter">E</span>
-        <span class="letter">T</span>
-        <span class="letter">E</span>
-        <span class="letter">O</span>
+    <div id="zeteo-container">
+        <div id="zeteo">
+            <span class="letter">Z</span>
+            <span class="letter">E</span>
+            <span class="letter">T</span>
+            <span class="letter">E</span>
+            <span class="letter">O</span>
+        </div>
+        <img id="logo" src="img/zm-logo.jpg" alt="ZETEO Logo">
     </div>
     <a id="email-link" href="mailto:hi@zeteomail.com">
         <i class="fas fa-envelope"></i>
