@@ -1,2 +1,2 @@
-# zeteo
+# zeteo mail
 zeteomail.com
