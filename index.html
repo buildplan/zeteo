@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZETEO Mail</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body {
@@ -82,14 +81,8 @@
             margin-top: 20px;
             width: 100px;
             height: auto;
-            display: none;
-            animation: fadeInLogo 1s forwards 4s;
-        }
-        @keyframes fadeInLogo {
-            to {
-                display: block;
-                opacity: 1;
-            }
+            opacity: 0;
+            transition: opacity 1s ease;
         }
     </style>
 </head>
@@ -123,6 +116,13 @@
             } else {
                 toggle.classList.replace('fa-sun', 'fa-moon');
             }
+        });
+
+        // Show logo after ZETEO text animation
+        const letters = document.querySelectorAll('.letter');
+        const lastLetter = letters[letters.length - 1];
+        lastLetter.addEventListener('animationend', () => {
+            document.getElementById('logo').style.opacity = 1;
         });
     </script>
 </body>
