@@ -25,6 +25,14 @@
                 opacity: 1;
             }
         }
+        @keyframes drawBox {
+            0% {
+                stroke-dasharray: 0, 400;
+            }
+            100% {
+                stroke-dasharray: 400, 0;
+            }
+        }
         @keyframes backgroundAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -132,16 +140,24 @@
             transform: scale(1.1);
             transition: transform 0.2s ease;
         }
-        #logo {
+        #logo-container {
             margin-top: 20px;
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
             width: 100px;
             height: auto;
             opacity: 0;
             transition: opacity 1s ease;
-            /* Remove background-related properties */
-            padding: 10px;
-            border: 2px solid #ccc;
-            border-radius: 10px;
+        }
+        #logo-box {
+            animation: drawBox 3s forwards;
+            animation-delay: 3s; /* This should match the total delay of the text animation */
         }
         body.dark-mode #logo {
             filter: invert(1);
@@ -189,7 +205,12 @@
     </a>
     <i id="dark-mode-toggle" class="fas fa-moon tooltip" aria-label="Toggle dark mode"><span class="tooltiptext">Toggle Dark Mode</span></i>
     <div id="zeteo-container">
-        <img id="logo" src="img/zm-logo.png" alt="ZETEO Mail Logo" loading="lazy">
+        <div id="logo-container">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+                <rect id="logo-box" x="10" y="10" width="100" height="100" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="0, 400"></rect>
+            </svg>
+            <img id="logo" src="img/zm-logo.png" alt="ZETEO Mail Logo" loading="lazy">
+        </div>
         <div id="zeteo">
             <span class="letter">Z</span>
             <span class="letter">E</span>
