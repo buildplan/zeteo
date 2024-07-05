@@ -14,7 +14,6 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="img/browserconfig.xml">
-    
     <meta name="theme-color" content="#ffffff">
     <link rel="preload" as="image" href="img/zm-logo.jpg">
     <meta name="description" content="ZETEO Mail - Contact us at hi@zeteomail.com">
@@ -131,16 +130,19 @@
             transition: transform 0.2s ease;
         }
         #email-link:hover i {
-            color: #007bff;
+            color: #007bff; /* Change color on hover */
         }
-        #email-link i.fa-envelope {
-            display: none; 
+        #email-link .fa-envelope {
+            display: inline; /* Ensure the envelope icon is displayed by default */
         }
-        #email-link:hover i.fa-envelope {
-            display: none; 
+        #email-link .fa-paper-plane {
+            display: none; /* Hide the paper-plane icon by default */
         }
-        #email-link i.fa-paper-plane {
-            display: inline; 
+        #email-link:hover .fa-envelope {
+            display: none; /* Hide the envelope icon on hover */
+        }
+        #email-link:hover .fa-paper-plane {
+            display: inline; /* Display the paper-plane icon on hover */
         }
     </style>
 </head>
@@ -161,7 +163,7 @@
     </div>
     <a id="email-link" href="mailto:hi@zeteomail.com">
         <i class="fa-solid fa-envelope" aria-label="Contact Me"></i>
-        <i class="fa-solid fa-paper-plane" aria-label="Send Me" style="display: none;"></i>
+        <i class="fa-solid fa-paper-plane" aria-label="Send Me"></i>
     </a>
     <footer>
         <i class="fa-regular fa-copyright"></i> <span id="current-year"></span>  <a href="https://alisufyan.uk" target="_blank"><i class="fa-solid fa-globe"></i></a> 
