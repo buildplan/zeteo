@@ -19,6 +19,16 @@
     <meta name="description" content="ZETEO Mail - Contact us at hi@zeteomail.com">
     <meta name="keywords" content="ZETEO, Mail, Contact, Email">
     <style>
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
         body {
             display: flex;
             flex-direction: column;
@@ -27,7 +37,9 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: backgroundAnimation 15s ease infinite;
             transition: background-color 0.3s, color 0.3s;
             scroll-behavior: smooth;
         }
@@ -55,17 +67,28 @@
         .letter:nth-child(4) { animation-delay: 2s; }
         .letter:nth-child(5) { animation-delay: 2.5s; }
         .letter:nth-child(6) { animation-delay: 3s; }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
         #email-link {
             margin-top: 20px;
             font-size: 2rem;
             text-decoration: none;
             color: inherit;
             transition: color 0.3s;
+            position: relative;
+        }
+        #email-link:hover i {
+            color: #007bff;
+        }
+        #email-link .fa-envelope {
+            display: inline;
+        }
+        #email-link .fa-paper-plane {
+            display: none;
+        }
+        #email-link:hover .fa-envelope {
+            display: none;
+        }
+        #email-link:hover .fa-paper-plane {
+            display: inline;
         }
         footer {
             position: absolute;
@@ -104,7 +127,7 @@
             color: inherit;
             transition: transform 0.2s ease, color 0.3s;
         }
-        #external-link:hover { 
+        #external-link:hover {
             transform: scale(1.1);
             transition: transform 0.2s ease;
         }
@@ -123,34 +146,46 @@
             filter: invert(1);
         }
         footer a:hover i {
-            color: #007bff; /* Change color */
+            color: #007bff;
         }
-        #dark-mode-toggle:hover { 
+        #dark-mode-toggle:hover {
             transform: scale(1.1);
             transition: transform 0.2s ease;
         }
-        #email-link:hover i {
-            color: #007bff; 
+        .custom-cursor {
+            cursor: url('img/cursor.png'), auto; /* Ensure the path is correct */
         }
-        #email-link .fa-envelope {
-            display: inline;
+        .tooltip {
+            position: relative;
+            display: inline-block;
         }
-        #email-link .fa-paper-plane {
-            display: none; 
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
-        #email-link:hover .fa-envelope {
-            display: none; 
-        }
-        #email-link:hover .fa-paper-plane {
-            display: inline; 
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
-<body>
-    <a id="external-link" href="https://send.zeteomail.com" target="_blank" aria-label="External Link">
-        <i class="fas fa-paperclip"></i>
+<body class="custom-cursor">
+    <a id="external-link" href="https://example.com" target="_blank" aria-label="External Link">
+        <i class="fas fa-paperclip tooltip"><span class="tooltiptext">Go to ProtonMail</span></i>
     </a>
-    <i id="dark-mode-toggle" class="fas fa-moon" aria-label="Toggle dark mode"></i>
+    <i id="dark-mode-toggle" class="fas fa-moon tooltip" aria-label="Toggle dark mode"><span class="tooltiptext">Toggle Dark Mode</span></i>
     <div id="zeteo-container">
         <img id="logo" src="img/zm-logo.jpg" alt="ZETEO Logo" loading="lazy">
         <div id="zeteo">
@@ -166,8 +201,9 @@
         <i class="fa-solid fa-paper-plane" aria-label="Send Me"></i>
     </a>
     <footer>
-        <i class="fa-regular fa-copyright"></i> <span id="current-year"></span>  <a href="https://alisufyan.uk" target="_blank"><i class="fa-solid fa-globe"></i></a> 
-        <a href="https://www.linkedin.com/in/alisufyan/" target="_blank"><i class="fab fa-linkedin"></i></a> 
+        <i class="fa-regular fa-copyright"></i> <span id="current-year"></span>
+        <a href="https://alisufyan.uk" target="_blank"><i class="fa-solid fa-globe"></i></a>
+        <a href="https://www.linkedin.com/in/alisufyan/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://x.com/_AliSufyan" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
     </footer>
     <script>
