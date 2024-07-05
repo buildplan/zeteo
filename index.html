@@ -14,8 +14,11 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="img/browserconfig.xml">
+    
     <meta name="theme-color" content="#ffffff">
     <link rel="preload" as="image" href="img/zm-logo.jpg">
+    <meta name="description" content="ZETEO Mail - Contact us at hi@zeteomail.com">
+    <meta name="keywords" content="ZETEO, Mail, Contact, Email">
     <style>
         body {
             display: flex;
@@ -27,6 +30,7 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             transition: background-color 0.3s, color 0.3s;
+            scroll-behavior: smooth;
         }
         body.dark-mode {
             background-color: #121212;
@@ -62,6 +66,7 @@
             font-size: 2rem;
             text-decoration: none;
             color: inherit;
+            transition: color 0.3s;
         }
         footer {
             position: absolute;
@@ -80,6 +85,7 @@
         footer i {
             margin-left: 10px;
             font-size: 1.5rem;
+            transition: color 0.3s;
         }
         #dark-mode-toggle {
             position: absolute;
@@ -88,6 +94,20 @@
             font-size: 2rem;
             cursor: pointer;
             color: inherit;
+            transition: transform 0.2s ease, color 0.3s;
+        }
+        #external-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: inherit;
+            transition: transform 0.2s ease, color 0.3s;
+        }
+        #external-link:hover { 
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
         }
         #logo {
             margin-top: 20px;
@@ -110,22 +130,27 @@
             transform: scale(1.1);
             transition: transform 0.2s ease;
         }
-        #email-link:hover i::before {
-            content: "\f1a9";
+        #email-link:hover i {
             color: #007bff;
         }
-        #email-link {
-            margin-top: 20px;
-            font-size: 2rem;
-            text-decoration: none;
-            color: inherit;
+        #email-link i.fa-envelope {
+            display: none; 
+        }
+        #email-link:hover i.fa-envelope {
+            display: none; 
+        }
+        #email-link i.fa-paper-plane {
+            display: inline; 
         }
     </style>
 </head>
 <body>
+    <a id="external-link" href="https://account.proton.me/mail" target="_blank" aria-label="External Link">
+        <i class="fas fa-paperclip"></i>
+    </a>
     <i id="dark-mode-toggle" class="fas fa-moon" aria-label="Toggle dark mode"></i>
     <div id="zeteo-container">
-        <img id="logo" src="img/zm-logo.jpg" alt="ZETEO Logo">
+        <img id="logo" src="img/zm-logo.jpg" alt="ZETEO Logo" loading="lazy">
         <div id="zeteo">
             <span class="letter">Z</span>
             <span class="letter">E</span>
@@ -136,6 +161,7 @@
     </div>
     <a id="email-link" href="mailto:hi@zeteomail.com">
         <i class="fa-solid fa-envelope" aria-label="Contact Me"></i>
+        <i class="fa-solid fa-paper-plane" aria-label="Send Me" style="display: none;"></i>
     </a>
     <footer>
         <i class="fa-regular fa-copyright"></i> <span id="current-year"></span>  <a href="https://alisufyan.uk" target="_blank"><i class="fa-solid fa-globe"></i></a> 
