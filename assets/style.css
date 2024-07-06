@@ -96,12 +96,15 @@
             align-items: center;
             font-size: 0.8rem;
             line-height: 1.5rem;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-        footer .left,
-        footer .right {
+        footer .left {
             display: flex;
             align-items: center;
+        }
+       footer .right {
+           display: flex;
+           align-items: flex-end;
         }
         footer a {
             color: inherit;
