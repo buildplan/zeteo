@@ -84,6 +84,16 @@
             transition: color 0.3s;
             position: relative;
         }
+        #zeteo-definition {
+            font-size: 0.8rem;
+            color: #000;
+            margin-top: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        body.dark-mode #zeteo-definition {
+            color: #ffffff;
+        }
         #email-link:hover i {
             color: #007bff;
         }
@@ -102,9 +112,18 @@
         footer {
             position: absolute;
             bottom: 10px;
-            text-align: center;
-            font-size: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
             line-height: 1.5rem;
+            padding: 0 20px;
+        }
+        footer .left,
+        footer .right {
+            display: flex;
+            align-items: center;
         }
         footer a {
             color: inherit;
@@ -115,8 +134,13 @@
         }
         footer i {
             margin-left: 10px;
-            font-size: 1.5rem;
+            font-size: 0.8rem;
             transition: color 0.3s;
+        }
+        footer img.icon {
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-left: 10px;
         }
         #dark-mode-toggle {
             position: absolute;
@@ -199,14 +223,15 @@
             visibility: visible;
             opacity: 1;
         }
+
     </style>
     
 </head>
 <body class="custom-cursor">
-    <a id="external-link" href="https://example.com" target="_blank" aria-label="External Link">
-        <i class="fas fa-paperclip tooltip"><span class="tooltiptext">Go to ProtonMail</span></i>
+    <a id="external-link" href="https://send.zeteomail.com" target="_blank" aria-label="External Link to Email Login">
+        <i class="fas fa-paperclip tooltip"><span class="tooltiptext">Login</span></i>
     </a>
-    <i id="dark-mode-toggle" class="fas fa-moon tooltip" aria-label="Toggle dark mode"><span class="tooltiptext">Toggle Dark Mode</span></i>
+    <i id="dark-mode-toggle" class="fas fa-moon tooltip"><span class="tooltiptext">Toggle Dark Mode</span></i>
     <div id="zeteo-container">
         <div id="logo-container">
             <svg width="120" height="120" viewBox="0 0 120 120">
@@ -223,14 +248,28 @@
         </div>
     </div>
     <a id="email-link" href="mailto:hi@zeteomail.com">
-        <i class="fa-solid fa-envelope" aria-label="Contact Me"></i>
-        <i class="fa-solid fa-paper-plane" aria-label="Send Me"></i>
+        <i class="fa-solid fa-envelope"></i>
+        <i class="fa-solid fa-paper-plane"></i>
     </a>
-    <footer>
-        <i class="fa-regular fa-copyright"></i> <span id="current-year"></span>
-        <a href="https://alisufyan.uk" target="_blank"><i class="fa-solid fa-globe"></i></a>
-        <a href="https://www.linkedin.com/in/alisufyan/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/_AliSufyan" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+    <div id="zeteo-definition">
+        Zeteo (ζητέω) - [zeh-TAY-o]<br>
+        Greek word for seeking, questioning, and understanding.
+    </div>
+   <footer>
+        <div class="left">
+            <a href="https://alisufyan.uk" target="_blank"><i class="fa-solid fa-globe"></i></a>
+            <a href="https://www.linkedin.com/in/alisufyan/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/_AliSufyan" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="center">
+            <i class="fa-regular fa-copyright"></i> <span id="current-year"></span>
+        </div>
+        <div class="right">
+            Powered by
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.cloudflare.com" target="_blank"><i class="fa-brands fa-cloudflare"></i></a>
+            <a href="https://protonmail.com" target="_blank"><i class="fa-solid fa-lock"></i></a>
+        </div>
     </footer>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
