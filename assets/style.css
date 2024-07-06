@@ -185,6 +185,8 @@
         }
         footer a:hover i {
             color: #007bff;
+            transform: scale(1.5);
+            transition: transform 0.2s ease;
         }
         #dark-mode-toggle:hover {
             transform: scale(1.2);
