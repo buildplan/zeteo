@@ -107,7 +107,7 @@
         }
        footer .right {
            display: flex;
-           align-items: flex-end;
+           align-items: center;
         }
         footer a {
             color: inherit;
@@ -145,7 +145,7 @@
             transition: transform 0.2s ease, color 0.3s;
         }
         #external-link:hover {
-            transform: scale(1.1);
+            transform: scale(1.2);
             transition: transform 0.2s ease;
         }
         #logo-container {
@@ -176,7 +176,7 @@
             color: #007bff;
         }
         #dark-mode-toggle:hover {
-            transform: scale(1.1);
+            transform: scale(1.2);
             transition: transform 0.2s ease;
         }
         .custom-cursor {
