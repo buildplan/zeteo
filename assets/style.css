@@ -116,8 +116,13 @@
            margin-right: 10px;
         }
         footer .center:hover {
-            transform: scale(1.2);
-            transition: transform 0.2s ease
+            animation: wobble 0.3s ease-in-out;
+        }
+        @keyframes wobble {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+            100% { transform: translateX(0); }
         }
         footer a {
             color: inherit;
