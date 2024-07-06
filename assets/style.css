@@ -115,6 +115,10 @@
            align-items: center;
            margin-right: 10px;
         }
+        footer .center:hover {
+            transform: scale(1.2);
+            transition: transform 0.2s ease
+        }
         footer a {
             color: inherit;
             text-decoration: none;
