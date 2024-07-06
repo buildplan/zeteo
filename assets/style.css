@@ -164,11 +164,10 @@
             height: auto;
             opacity: 0;
             transition: opacity 1s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         #logo-box {
             animation: drawBox 3s forwards;
-            animation-delay: 3s; /* This should match the total delay of the text animation */
+            animation-delay: 3s; 
         }
         body.dark-mode #logo {
             filter: invert(1);
