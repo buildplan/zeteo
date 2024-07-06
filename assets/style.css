@@ -27,7 +27,7 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(-45deg, #02c5cf, #e73c7e, #23a6d5, #32ff00);
+            background: linear-gradient(-45deg, #02c5cf, #f0334b, #23a6d5, #32ff00);
             background-size: 400% 400%;
             animation: backgroundAnimation 15s ease infinite;
             transition: background-color 0.3s, color 0.3s;
