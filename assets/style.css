@@ -72,6 +72,11 @@
             text-align: center;
             cursor: pointer;
         }
+        #zeteo-definition:hover {
+            transform: scale(1.1);
+            transform-origin: center;
+            transition: transform 0.2s ease;
+        }
         body.dark-mode #zeteo-definition {
             color: #ffffff;
         }
